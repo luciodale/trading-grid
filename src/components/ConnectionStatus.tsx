@@ -84,7 +84,7 @@ export function ConnectionStatus({
 						<div className="control-group-inline">
 							<button
 								type="button"
-								onClick={() =>
+								onMouseUp={() =>
 									onSaveIntervals?.(localUpdateInterval, localAddRemoveInterval)
 								}
 								disabled={isPaused}
@@ -95,7 +95,7 @@ export function ConnectionStatus({
 							{isConnected && !error && onTogglePause && (
 								<button
 									type="button"
-									onClick={onTogglePause}
+									onMouseUp={onTogglePause}
 									className={`pause-button ${isPaused ? "paused" : ""}`}
 									title={isPaused ? "Resume streaming" : "Pause streaming"}
 								>
