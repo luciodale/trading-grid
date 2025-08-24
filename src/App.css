@@ -31,7 +31,6 @@ body {
 		"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
-	overflow: hidden;
 }
 
 #root {
@@ -121,6 +120,8 @@ body {
 	font-size: 14px;
 	font-weight: 500;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: var(--shadow);
@@ -490,4 +491,46 @@ body {
 	color: var(--text-muted);
 	font-size: 14px;
 	font-style: italic;
+}
+
+@media (max-width: 1024px) {
+	.app-container {
+		height: auto;
+	}
+
+	.header-content {
+		flex-direction: column;
+	}
+
+	.app-main {
+		display: block;
+	}
+
+	.connection-status {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.streaming-controls-inline {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.grid-section {
+		display: block;
+	}
+
+	.grid-container {
+		height: 60vh;
+	}
+
+	.panels-section {
+		width: 100%;
+		flex-direction: column-reverse;
+	}
+
+	.panel-content {
+		height: 25.4vh;
+		flex: auto;
+	}
 }

@@ -81,48 +81,49 @@ export function ConnectionStatus({
 							/>
 						</div>
 
-						<button
-							type="button"
-							onClick={() =>
-								onSaveIntervals?.(localUpdateInterval, localAddRemoveInterval)
-							}
-							disabled={isPaused}
-							className="save-button-inline"
-						>
-							Save
-						</button>
+						<div className="control-group-inline">
+							<button
+								type="button"
+								onClick={() =>
+									onSaveIntervals?.(localUpdateInterval, localAddRemoveInterval)
+								}
+								disabled={isPaused}
+								className="save-button-inline"
+							>
+								Save
+							</button>
+							{isConnected && !error && onTogglePause && (
+								<button
+									type="button"
+									onClick={onTogglePause}
+									className={`pause-button ${isPaused ? "paused" : ""}`}
+									title={isPaused ? "Resume streaming" : "Pause streaming"}
+								>
+									{isPaused ? (
+										<svg
+											width="16"
+											height="16"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+										>
+											<title>Resume</title>
+											<path d="M8 5v14l11-7z" />
+										</svg>
+									) : (
+										<svg
+											width="16"
+											height="16"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+										>
+											<title>Pause</title>
+											<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+										</svg>
+									)}
+								</button>
+							)}
+						</div>
 					</div>
-				)}
-
-				{isConnected && !error && onTogglePause && (
-					<button
-						type="button"
-						onClick={onTogglePause}
-						className={`pause-button ${isPaused ? "paused" : ""}`}
-						title={isPaused ? "Resume streaming" : "Pause streaming"}
-					>
-						{isPaused ? (
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-							>
-								<title>Resume</title>
-								<path d="M8 5v14l11-7z" />
-							</svg>
-						) : (
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-							>
-								<title>Pause</title>
-								<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-							</svg>
-						)}
-					</button>
 				)}
 			</div>
 		</div>
