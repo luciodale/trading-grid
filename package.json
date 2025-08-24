@@ -1,0 +1,33 @@
+{
+	"name": "react-ts",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"lint": "biome check src --write",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"ag-grid-react": "^34.1.1",
+		"msw": "^2.10.5",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@types/react": "^18.0.28",
+		"@types/react-dom": "^18.0.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"@vitejs/plugin-react": "^4.0.0",
+		"typescript": "^5.0.2",
+		"vite": "^4.3.2"
+	},
+	"msw": {
+		"workerDirectory": [
+			"public"
+		]
+	}
+}
