@@ -1,4 +1,4 @@
-# Trading Grid
+# Trading Grid [DEMO](https://trading-grid.netlify.app/)
 
 A real-time options trading data visualization tool built with React, TypeScript, and AG Grid.
 
